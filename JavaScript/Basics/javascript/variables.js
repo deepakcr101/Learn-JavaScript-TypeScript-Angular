@@ -57,7 +57,7 @@ Variables declared with let cannot be Redeclared in the same scope*/
 //JavaScript const variables must be assigned a value when they are declared:
 
 
-//does not define a constant value. It defines a constant reference to a value.
+//const does not define a constant value. It defines a constant reference to a value.
 
 // String
 let color = "Yellow";
@@ -120,3 +120,15 @@ console.log(hoistedVar); // Undefined (var is hoisted)
 var hoistedVar = "I am hoisted";
 // console.log(hoistedLet); // Error: Cannot access 'hoistedLet' before initialization
 let hoistedLet = "I am not hoisted";
+
+/*A JavaScript variable can hold 8 types of data:
+
+Type	Description
+String	A text of characters enclosed in quotes
+Number	A number representing a mathematical value
+Bigint	A number representing a large integer
+Boolean	A data type representing true or false
+Object	A collection of key-value pairs of data
+Undefined	A primitive variable with no assigned value
+Null	A primitive value representing object absence
+Symbol	A unique and primitive identifier*/

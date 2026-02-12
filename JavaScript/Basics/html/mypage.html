@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My New Page</title>
+</head>
+<body>
+    <h2>Welcome to My New Page!</h2>
+    <p>This is a simple HTML page created as part of a JavaScript basics tutorial.</p>
+    
+    <button onclick="writeToDocument()">Click Me to Write on Document!</button>
+
+    <button onclick="alert('This is an alert message!')" scope="block">Click me to give an alert message</button>
+
+    <button onclick="showConsoleMessage()">Click ME To Show a Console Message</button>
+
+    <br>
+    <button onclick="document.getElementById('myParagraph').style.color='red'">Change Paragraph Color</button>
+    <p id="myParagraph">This is a paragraph that will change color when the button is clicked.</p>
+
+    <br>
+    <button onclick="window.print()">Click Me To Print This Page </button>
+
+    
+    <script src="/JavaScript/Basics/javascript/myscript.js">
+        console.log("Welcome to my new HTML page!");
+    </script>
+</body>
+</html>
