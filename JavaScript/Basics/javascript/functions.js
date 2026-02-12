@@ -31,7 +31,7 @@ function greetWithDefault(name = "Stranger") {
     return `Hello, ${name}!`;
 }
 console.log(greetWithDefault()); // Output: Hello, Stranger!
-console.log(greetWithDefault("Alice")); // Output: Hello, Alice!
+console.log(greetWithDefault("Rahul Batra")); // Output: Hello, Rahul Batra!
 
 // 5. Rest Parameters
 function sumAll(...numbers) {

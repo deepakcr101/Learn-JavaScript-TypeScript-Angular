@@ -16,6 +16,7 @@ console.log("Value of y: " + y); // Output: 20
 If the first value is undefined or null, the second value is assigned.
 */
 
+//The ... operator splits iterables into individual elements.
 
 let text = "12345";
 
@@ -26,5 +27,24 @@ console.log("Maximum value: " + max);
 
 switch(new Date().getDay()){
   case 0:
-    day
+    day = "Sunday";
+    break;
+  case 1:
+    day = "Monday";
+    break;
+  case 2:
+    day = "Tuesday";
+    break;
+  case 3:
+    day = "Wednesday";
+    break;
+  case 4:
+    day = "Thursday";
+    break;
+  case 5:
+    day = "Friday";
+    break;
+  case 6:
+    day = "Saturday";
+    break;
 }
