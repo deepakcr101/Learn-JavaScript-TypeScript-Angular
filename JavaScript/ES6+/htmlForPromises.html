@@ -19,7 +19,37 @@
         <li><strong>Rejected:</strong> The operation failed, and the promise has a reason for the failure.</li>
     </ul>
 
+    <h3>Why Use Promises?</h3>
+    <ul>
+        <li><strong>Improved Readability:</strong> Promises provide a cleaner and more readable syntax for handling asynchronous code compared to callbacks.</li>
+        <li><strong>Error Handling:</strong> Promises allow for better error handling through the use of .catch() method.</li>
+        <li><strong>Chaining:</strong> Promises can be chained together, allowing for sequential asynchronous operations without deeply nested callbacks.</li>
+    </ul>
     
+    <h3>USE CASES: </h3>
+    <ul>
+        <li>API Calls: Fetching data from a server.</li>
+        <li>File Operations: Reading or writing files asynchronously.</li>
+        <li>Database Operations: Performing database queries asynchronously.</li>
+        <li>Network Requests: Handling HTTP requests and responses.</li>
+        <li>Timeouts and Delays: Managing asynchronous delays in execution using setTimeout.</li>
+        <li>Parallel Operations: Using Promise.all to wait for multiple promises to resolve.</li>
+    </ul>
+
+    <h3>Key Methods:</h3>
+    <ul>
+        <li><strong>Promise.resolve(value):</strong> Creates a resolved promise with the given value.</li>
+        <li><strong>Promise.reject(reason):</strong> Creates a rejected promise with the given reason.</li>
+        <li><strong>Promise.all(promises):</strong> Returns a promise that resolves when all promises in an array are resolved.</li>
+        <li><strong>Promise.race(promises):</strong> Returns a promise that resolves or rejects as soon as one of the promises in an array resolves or rejects.</li>
+    </ul>
+
+    <h3>Key Properties:</h3>
+    <ul>
+        <li><strong>.then(onFulfilled, onRejected):</strong> Registers callbacks for when the promise is fulfilled or rejected.</li>
+        <li><strong>.catch(onRejected):</strong> Registers a callback for when the promise is rejected.</li>
+        <li><strong>.finally(onFinally):</strong> Registers a callback that runs regardless of whether the promise is fulfilled or rejected.</li>
+    </ul>
 
     <script src="/JavaScript/ES6+/promises.js"></script>
 </body>
