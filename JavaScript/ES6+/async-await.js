@@ -16,7 +16,7 @@ Async/Await is a modern way to handle asynchronous operations in JavaScript. It 
 
 ### Common Use Cases:
 - Fetching data from APIs
-- Performing sequential asynchronous tasks
+- Performing sequential asynchronous tasks 
 - Error handling in asynchronous operations
 */
 
