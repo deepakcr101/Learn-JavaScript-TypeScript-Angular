@@ -6,5 +6,4 @@ function writeToDocument(){
 function showConsoleMessage(){
     console.log("This is a message from the showConsoleMessage function!");
     console.log(100-45);
-    
 }

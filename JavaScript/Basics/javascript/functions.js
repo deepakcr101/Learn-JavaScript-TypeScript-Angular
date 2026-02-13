@@ -6,11 +6,15 @@ function greet(name) {
 }
 console.log(greet("John")); // Output: Hello, John!
 
+//function expression is a function stored in a variable.
 // 2. Function Expression
 const add = function (a, b) {
     return a + b;
 };
 console.log(add(5, 3)); // Output: 8
+//function expression is a JavaScript statement.
+
+//That is why it usually ends with a semicolon.
 
 // 3. Arrow Functions (ES6+)
 const multiply = (a, b) => a * b; // Implicit return for single-line arrow functions
