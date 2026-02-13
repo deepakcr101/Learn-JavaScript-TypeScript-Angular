@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Study</title>
+</head>
+
+<body>
+    <h1>DOM Study</h1>
+
+    <p>The Document Object Model (DOM) is a programming interface for web documents. It represents the page so that
+        programs can change the document structure, style, and content. The DOM provides a structured representation of
+        the document as a tree of objects, and it defines methods that allow you to access and manipulate these objects.
+    </p>
+    <p>The DOM is a representation of the HTML structure as a tree-like model. JavaScript can interact with this model
+        to manipulate elements, attributes, and styles dynamically.</p>
+    <h2>Key Concepts of the DOM</h2>
+    <div>
+        <ul>
+            <li><strong>Document:</strong> The root of the DOM tree, representing the entire HTML document.</li>
+            <li><strong>Element:</strong> Represents an HTML element, such as &lt;div&gt;, &lt;p&gt;, etc.</li>
+            <li><strong>Node:</strong> A generic term for any object in the DOM tree, including elements, text nodes,
+                and comments.</li>
+            <li><strong>Event:</strong> An action that occurs in the browser, such as a click or keypress, which can be
+                handled using JavaScript.</li>
+        </ul>
+    </div>
+
+    <h3>Key Methods and Properties of the DOM</h3>
+    <div>
+        <ul>
+            <li><strong>getElementById:</strong> Selects an element by its ID.</li>
+            <li><strong>getElementsByTagName:</strong> Selects elements by their tag name.</li>
+            <li><strong>querySelector:</strong> Selects the first element that matches a CSS selector.</li>
+            <li><strong>querySelectorAll:</strong> Selects all elements that match a CSS selector.</li>
+            <li><strong>innerHTML:</strong> Gets or sets the HTML content of an element.</li>
+            <li><strong>textContent:</strong> Gets or sets the text content of an element.</li>
+        </ul>
+
+        <h2>Events in DOM</h2>
+        <p>Events are actions that occur in the browser, such as clicks, key presses, or mouse movements. JavaScript can
+            listen for these events and execute code in response. This is done using event listeners.</p>
+
+        <div>
+            <ul>
+                <li><strong>addEventListener:</strong> Attaches an event handler to an element.</li>
+                <li><strong>removeEventListener:</strong> Removes an event handler from an element.</li>
+                <li><strong>Event Object:</strong> When an event occurs, an event object is created that contains
+                    information about the event, such as the target element and the type of event.</li>
+                <li><strong>Event Propagation:</strong> Events can propagate through the DOM in three phases: capturing,
+                    target, and bubbling. Understanding event propagation is crucial for effective event handling.</li>
+                <li><strong>Event Delegation:</strong> A technique where a single event listener is added to a parent
+                    element to manage events for its child elements, improving performance and simplifying code.</li>
+            </ul>
+        </div>
+        <div>
+
+        </div>
+        <p id="heading"></p>
+        <div class="item">Hi I am a Div Container </div>
+        <button class="item" id="myButton" target="_blank">Click Me</button>
+        <br>
+        <br>
+
+        <a href="xyz">Hi I am a Link Click Me. </a>
+        <br>
+
+        <div>
+            <ul id="myList">
+                <li>Rahul Batra</li>
+                <li>Priyam Maini</li>
+                <li>Deepak Kumar</li>
+            </ul>
+        </div>
+
+        <div id="box" style="width: 100px; height: 100px; background-color: lightblue;">I am a Box Hover Over Me to see
+            Event Listener</div>
+
+        <form action="https://www.linkedin.com/in/deepak-kumar-10811a220/" target="_blank" method="POST" id="myForm">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+            <br>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <br>
+            <button type="submit">Submit</button>
+        </form>
+
+        <div id="parent" style="width: 510px; height: 50px; background-color: red;">Hi I am Parent Container
+            <div id="child" style="width: 350px; height: 20px; background-color: rgb(16, 134, 52);">Hi I am Child
+                Container</div>
+        </div>
+
+
+        <script src="./dom-manipulation.js"></script>
+        <script src="./events.js"></script>
+</body>
+
+</html>
