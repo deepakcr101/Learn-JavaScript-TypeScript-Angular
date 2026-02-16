@@ -1,5 +1,4 @@
 // Generics in TypeScript
-
 /*
 ### What are Generics?
 
@@ -16,78 +15,52 @@ Generics allow you to create reusable components that work with multiple types w
 2. Generic classes
 3. Generic interfaces
 */
-
 console.log("Generics in TypeScript");
-
 // 1. Generic Functions
-function identity<T>(value: T): T {
+function identity(value) {
     return value;
 }
-console.log("Generic Identity (string):", identity<string>("Hello")); // Output: Hello
-console.log("Generic Identity (number):", identity<number>(42)); // Output: 42
-
+console.log("Generic Identity (string):", identity("Hello")); // Output: Hello
+console.log("Generic Identity (number):", identity(42)); // Output: 42
 // 2. Generic Arrays
-function getFirstElement<T>(array: T[]): T {
+function getFirstElement(array) {
     return array[0];
 }
-console.log("First Element (string):", getFirstElement<string>(["Apple", "Banana", "Cherry"])); // Output: Apple
-console.log("First Element (number):", getFirstElement<number>([1, 2, 3, 4])); // Output: 1
-
+console.log("First Element (string):", getFirstElement(["Apple", "Banana", "Cherry"])); // Output: Apple
+console.log("First Element (number):", getFirstElement([1, 2, 3, 4])); // Output: 1
 // 3. Generic Classes
-class Box<T> {
-    private _content: T;
-
-    constructor(content: T) {
+class Box {
+    constructor(content) {
         this._content = content;
     }
-
-    getContent(): T {
+    getContent() {
         return this._content;
     }
 }
-
-const stringBox = new Box<string>("TypeScript");
+const stringBox = new Box("TypeScript");
 console.log("String Box Content:", stringBox.getContent()); // Output: TypeScript
-
-const numberBox = new Box<number>(123);
+const numberBox = new Box(123);
 console.log("Number Box Content:", numberBox.getContent()); // Output: 123
-
-// 4. Generic Interfaces
-interface Pair<K, V> {
-    key: K;
-    value: V;
-}
-
-const pair: Pair<string, number> = {
+const pair = {
     key: "Age",
     value: 30,
 };
 console.log("Generic Pair:", pair); // Output: { key: 'Age', value: 30 }
-
-// 5. Constraints with Generics
-interface Lengthwise {
-    length: number;
-}
-
-function logLength<T extends Lengthwise>(item: T): void {
+function logLength(item) {
     console.log("Length:", item.length);
 }
-
 logLength("Hello"); // Output: Length: 5
 logLength([1, 2, 3]); // Output: Length: 3
 // logLength(42); // Error: Type 'number' does not satisfy the constraint 'Lengthwise'
-
 // 6. Default Type Parameters
-function createArray<T = string>(length: number, value: T): T[] {
+function createArray(length, value) {
     return Array(length).fill(value);
 }
 console.log("Default Type Array:", createArray(3, "Default")); // Output: ['Default', 'Default', 'Default']
-console.log("Number Array:", createArray<number>(3, 42)); // Output: [42, 42, 42]
-
+console.log("Number Array:", createArray(3, 42)); // Output: [42, 42, 42]
 // 7. Combining Generics with Other Features
-function mergeObjects<T, U>(obj1: T, obj2: U): T & U {
-    return { ...obj1, ...obj2 };
+function mergeObjects(obj1, obj2) {
+    return Object.assign(Object.assign({}, obj1), obj2);
 }
-
-const merged = mergeObjects({ name: "Shivanshu" }, { age: 25 });
-console.log("Merged Object:", merged); // Output: { name: 'Shivanshu', age: 25 }
+const merged = mergeObjects({ name: "Shivamshu" }, { age: 25 });
+console.log("Merged Object:", merged); // Output: { name: 'Shivamshu', age: 25 }
