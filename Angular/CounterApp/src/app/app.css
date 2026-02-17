@@ -1,0 +1,53 @@
+h1{
+    background-color: aquamarine;
+    text-align: center;
+    font-size: xxx-large;
+}
+
+div{
+    padding: auto;
+    width: 100px;
+    background-color: lightgray;
+    border-radius: 20px;
+    font-size: 80px;
+    text-align: center;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+}
+
+.btn{
+    align-content: center;
+    align-items: center;
+    align-self: center;
+    font-size: 30px;
+    padding: 10px;
+    margin: 10px;
+    width: 200px;
+    height: 150px;
+    border-radius: 100%;
+    border: 2px solid black;
+    justify-content: center;
+}
+
+.btn:hover{
+    background-color: lightgray;
+}
+.inc-btn{
+    background-color: lightgreen;
+}
+
+.reset-btn{
+    background-color: lightblue;
+}
+
+.dec-btn{
+    background-color: lightcoral;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
