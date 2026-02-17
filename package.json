@@ -1,0 +1,25 @@
+{
+  "name": "learnangular",
+  "version": "1.0.0",
+  "description": "Welcome to my learning repository! This repo is designed to document my journey as I learn JavaScript, TypeScript, and Angular. Whether you're a beginner or looking to refresh your skills, feel free to explore, contribute, or use this as inspiration for your own learning path.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+    
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/deepakcr101/LearnAngular.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/deepakcr101/LearnAngular/issues"
+  },
+  "homepage": "https://github.com/deepakcr101/LearnAngular#readme",
+  "devDependencies": {
+    "typescript": "^5.9.3"
+  }
+}
