@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>App Home</title>
+</head>
+<body>
+  <h1>Welcome to My App Home</h1>
+  <h2>To DO LIST MANAGER</h2>
+  <p>Manage your tasks efficiently with our To Do List Manager. Add, edit, and delete tasks to stay organized and productive.</p>
+   
+  <h3>Your Tasks</h3>
+  <ul>
+  @for(task of tasks(); track task.id){
+    <li class="task-list">
+      <span> {{task.id}} </span>
+      <span> {{ task.title }} </span>
+      <span>
+        <button (click)="deleteTask(task.id)">delete</button>
+      </span>
+    </li>
+  }
+  @empty{
+    <span>No Task found</span>
+  }
+  </ul>
+
+  <input
+  type="text"
+  [value]="title()"
+  (input)="title.set($event.target.value)"
+  placeholder="enter task"
+>
+<button (click)="addTask()">Add Task</button>
+
+</body>
+</html>

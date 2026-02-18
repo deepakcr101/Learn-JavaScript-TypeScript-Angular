@@ -15,4 +15,8 @@ export class App {
   handleClickEvent(){
     alert('Button Clicked!');
   }
+
+  handleEvent(eventName: string) {
+    console.log('Event:', eventName);
+  }
 }
