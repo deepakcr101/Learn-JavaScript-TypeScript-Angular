@@ -1,0 +1,104 @@
+<h1>Forms Demo App</h1>
+
+<h1>Reactive Forms: </h1>
+
+<input type="text" placeholder="Enter Your Email" [formControl]="email">
+<p>{{ email.value }}</p>
+
+<input type="text" placeholder="Enter Your Password" [formControl]="password">
+<br>
+<br>
+<button (click)="login()">LogIn</button>
+<button (click)="reset()">Reset</button>
+
+<div height="20px" style="background-color: skyblue;"><br></div>
+
+<form [formGroup]="myForm" (ngSubmit)="handleProfile()" action="post">
+  
+  <input type="text"  placeholder="Enter Your Name" formControlName="name">
+  <br>
+  <input type="text" placeholder="Enter Your Email" formControlName="email">
+  <br>
+  <input type="text" placeholder="Enter Your Password" formControlName="password">
+  <br>
+  <button type="submit">Submit</button>
+  <button (click)="myForm.reset()">Reset Form</button>
+</form>
+
+<h3>Submitted Profile Details:</h3>
+<p>Name: {{ myForm.value.name }}</p>
+<p>Email: {{ myForm.value.email }}</p>
+<p>Password: {{ myForm.value.password }}</p>
+
+<div height="20px" style="background-color: rgb(219, 115, 18);"><br></div>
+<h3>Validations:</h3>
+
+<form [formGroup]="myForm1" (ngSubmit)="handleProfile1()" action="post">
+  <input type="text" placeholder="Enter Your Name" formControlName="name1">
+  @if (name1?.hasError('required') && name1?.touched) {
+    <p style="color: red;">Name is required</p>
+  } @else if (name1?.hasError('minlength') && name1?.touched) {
+    <p style="color: red;">Name should be at least 3 characters long</p>
+  }
+  <br>
+
+  <input type="text" placeholder="Enter Your Email" formControlName="email1">
+  @if (email1?.hasError('required') && email1?.touched) {
+    <p style="color: red;">Email is required</p>
+  } @else if (email1?.hasError('email') && email1?.touched) {
+    <p style="color: red;">Please enter a valid email address</p>
+  }
+  <br>
+
+  <input type="text" placeholder="Enter Your Password" formControlName="password1">
+  @if (password1?.hasError('required') && password1?.touched) {
+    <p style="color: red;">Password is required</p>
+  } @else if (password1?.hasError('minlength') && password1?.touched) {
+    <p style="color: red;">Password should be at least 6 characters long</p>
+  }
+  <br>
+
+  <button type="submit" [disabled]="myForm1.invalid">Submit</button>
+  <button type="button" (click)="myForm1.reset()">Reset Form</button>
+</form>
+ <br>
+ <br>
+<div height="20px" style="background-color: rgb(230, 8, 27);"><br></div>
+
+<h1>Signal Forms:</h1>
+
+<!-- Name -->
+<input
+  type="text"
+  placeholder="Enter Your Name"
+  [formControl]="nameCtrl"
+/>
+
+@if (nameCtrl.touched && nameCtrl.invalid) {
+  <ul>
+    @for (msg of nameErrors(); track msg) {
+      <li style="color: red;">{{ msg }}</li>
+    }
+  </ul>
+}
+
+<p>Name: {{ nameCtrl.value }}</p>
+
+<!-- Email -->
+<input
+  type="email"
+  placeholder="Enter Your Email"
+  [formControl]="emailCtrl"
+/>
+
+@if (emailCtrl.touched && emailCtrl.invalid) {
+  <ul>
+    @for (msg of emailErrors(); track msg) {
+      <li style="color: red;">{{ msg }}</li>
+    }
+  </ul>
+}
+
+<p>Email: {{ emailCtrl.value }}</p>
+
+<button [disabled]="form.invalid" (click)="submitSignalForm()">Submit</button>
