@@ -67,38 +67,32 @@
 
 <h1>Signal Forms:</h1>
 
-<!-- Name -->
-<input
-  type="text"
-  placeholder="Enter Your Name"
-  [formControl]="nameCtrl"
-/>
-
-@if (nameCtrl.touched && nameCtrl.invalid) {
-  <ul>
-    @for (msg of nameErrors(); track msg) {
-      <li style="color: red;">{{ msg }}</li>
+<label>
+  Email
+  <input type="email" [formField]="loginForm.email" />
+</label>
+@if (loginForm.email().invalid() && loginForm.email().touched()) {
+  <div class="error">
+    @for (error of loginForm.email().errors(); track error.kind) {
+      <span>{{ error.message }}</span>
     }
-  </ul>
+  </div>
 }
-
-<p>Name: {{ nameCtrl.value }}</p>
-
-<!-- Email -->
-<input
-  type="email"
-  placeholder="Enter Your Email"
-  [formControl]="emailCtrl"
-/>
-
-@if (emailCtrl.touched && emailCtrl.invalid) {
-  <ul>
-    @for (msg of emailErrors(); track msg) {
-      <li style="color: red;">{{ msg }}</li>
+<label>
+  Password
+  <input type="password" [formField]="loginForm.password" />
+</label>
+@if (loginForm.password().invalid() && loginForm.password().touched()) {
+  <div class="error">
+    @for (error of loginForm.password().errors(); track error.kind) {
+      <span>{{ error.message }}</span>
     }
-  </ul>
+  </div>
 }
+<input type="checkbox" [formField]="loginForm.rememberMe" />
+<button type="submit" [disabled]="loginForm().invalid()" (click)="onSubmit($event)">Log in</button>
 
-<p>Email: {{ emailCtrl.value }}</p>
 
-<button [disabled]="form.invalid" (click)="submitSignalForm()">Submit</button>
+<p>Email: {{ loginForm.email().value() }}</p>
+<p>Password: {{ loginForm.password().value() ? '••••••••' : '(empty)' }}</p>
+<p>Remember me: {{ loginForm.rememberMe().value() ? 'Yes' : 'No' }}</p>

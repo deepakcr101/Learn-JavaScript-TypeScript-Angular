@@ -1,5 +1,8 @@
 <h1>List of Devices</h1>
 <ul>
-    <li *ngFor="let device of devices">{{device.name}} - {{device.status}}</li>
+    @for (device of devices; track device.id) {
+        <li>
+            <a [routerLink]="['/device', device.id]">{{ device.name }}</a>
+        </li>
+    }
 </ul>
-<p>device-list works!</p>
