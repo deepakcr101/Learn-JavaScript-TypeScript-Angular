@@ -1,0 +1,12 @@
+<h2>Hello, {{ username1 }}</h2>     <!-- Interpolation -->
+<br>
+<input [(ngModel)]="username1" type="text" class="blk"/>   <!-- Two-way binding -->
+<br>
+<img [src]="profileImage" class="blk"/>       <!-- Property binding -->
+<br>
+<br>
+<button (click)="toggle()" class="blk">        <!-- Event binding -->
+  Toggle Disabled
+</button>
+<br>
+<input [disabled]="isDisabled" />  <!-- Property binding -->

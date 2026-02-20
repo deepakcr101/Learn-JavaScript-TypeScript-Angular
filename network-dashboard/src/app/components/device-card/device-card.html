@@ -1,0 +1,9 @@
+<!-- Use *ngIf to prevent errors if the device data hasn't been passed in yet -->
+<div *ngIf="device" class="card-container">
+  <!-- Use {{ }} (interpolation) to display property values from the component class -->
+  <h2>{{ device.name }}</h2>
+  <p>IP Address: {{ device.ipAddress }}</p>
+  
+  <!-- We can also bind to element attributes like 'class' -->
+  <p>Status: <span [class]="'status-' + device.status.toLowerCase()">{{ device.status }}</span></p>
+</div>

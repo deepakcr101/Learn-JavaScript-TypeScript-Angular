@@ -1,0 +1,11 @@
+<h1>User Card Component</h1>
+<br>
+<label for="MyUserName">Enter your name:</label>
+<input [(ngModel)]="username" id="MyUserName"/>
+<br>
+<p>You typed: {{ username }}</p>
+<div class="card">
+  <h2>{{ name }}</h2>
+  <p>Age: {{ age }}</p>
+  <button (click)="greetUser()">Greet</button>
+</div>
